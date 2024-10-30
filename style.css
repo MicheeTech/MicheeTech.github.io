@@ -1,0 +1,295 @@
+/* Partie globale : styles pour l'adaptabilité */
+* {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, rgb(15 23 42), #000000); 
+    line-height: 1.6;
+    color: #fff;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    top: 0;
+    background-color: rgb(15 23 42 );
+    padding: 1rem;
+    max-width: 48rem;
+    margin: auto;
+    position: sticky;
+    z-index: 10;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav h4{
+    font-weight: 100;
+}
+nav div a img{
+    height: 30px;
+    width: 30px;
+}
+
+
+.social-links a {
+    margin-left: 1rem;
+}
+
+/* Section Hero */
+/* Section Hero */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 46rem;
+    margin: auto;
+    margin-top: 26px;
+    margin-bottom: 50px;
+    padding: 1rem;
+    border-radius: 10px; /* Ajout de bordures arrondies */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour ajouter de la profondeur */
+}
+
+.hero h1 {
+    color: #78b6fd;
+    font-size: 3rem;
+    margin-bottom: -10px; /* Espacement ajusté pour un meilleur alignement */
+}
+
+.hero h1 span {
+    color: #4b8dda; /* Couleur accentuée pour le prénom */
+}
+
+.hero h3 {
+    color: #c9d1d9;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #a9b2bd;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 400px; /* Limitation de largeur pour améliorer la lisibilité */
+}
+
+/* Image de profil */
+.profile-picture img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid #58a6ff; /* Bordure fine et colorée */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Ombre douce pour donner de la profondeur */
+}
+
+/* Adaptabilité pour les petits écrans */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .profile-picture img {
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h3 {
+        font-size: 1.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Section Projets */
+#projects {
+    padding: 3rem 0;
+    max-width: 46rem;
+    margin: auto;
+    position: relative;
+    color: #e0e0e0;
+}
+
+.contenu {
+    text-align: center;
+    position: relative;
+}
+
+.projects-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    max-width: 680px; /* Largeur ajustée pour afficher deux cartes */
+    margin: auto;
+}
+
+.projects-grid::-webkit-scrollbar {
+    display: none; /* Masquer la scrollbar pour un aspect plus propre */
+}
+
+.project-card {
+    flex: 0 0 320px; /* Largeur de chaque carte pour afficher deux cartes dans la zone visible */
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.gradient-card {
+    background: linear-gradient(to right, #0b1030, #0a3ee9);
+    color: #e0e0e0;
+}
+
+.dark-card {
+    background-color: #0f1124;
+    color: #ffffff;
+}
+
+.project-card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #cfcfcf;
+}
+
+/* Flèches de navigation */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+}
+
+.scroll-button.left {
+    left: 10px;
+    display: none;
+}
+
+.scroll-button.right {
+    right: 10px;
+}
+
+.scroll-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+/* Section Compétences */
+#skills {
+    padding: 3rem 0;
+    max-width: 64rem;
+    margin: auto;
+    text-align: center;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    border: 1px solid rgb(99, 135, 160);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 420px;
+    text-align: center;
+}
+
+/* Section Contact */
+#contact {
+    padding: 2rem 0;
+    text-align: center;
+}
+#contact h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.lien-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+.lien-contact > div a{
+   color: #fff;
+}
+.lien-contact > div a:hover{
+    color: rgb(27, 109, 233);
+    text-decoration: none;
+}
+
+/* Couleur par défaut pour les icônes */
+.lien-contact i {
+    color: #58a6ff; /* Couleur de base des icônes */
+}
+
+/* Couleur des icônes au survol */
+.lien-contact a:hover i {
+    color: #4b8dda; /* Couleur de survol des icônes */
+}
+
+@media (min-width: 768px) {
+    .lien-contact {
+        flex-direction: row;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    color: #8b949e;
+}
