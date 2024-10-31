@@ -98,7 +98,7 @@ nav div a img{
     width: 250px;
     height: 250px;
     object-fit: cover;
-    border: 3px solid #58a6ff; /* Bordure fine et colorée */
+    border: 2px solid #58a6ff; /* Bordure fine et colorée */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Ombre douce pour donner de la profondeur */
 }
 
@@ -154,6 +154,10 @@ nav div a img{
     max-width: 680px; /* Largeur ajustée pour afficher deux cartes */
     margin: auto;
 }
+.projects-grid a{
+    flex: 0 0 320px;
+    text-decoration: none;
+}
 
 .projects-grid::-webkit-scrollbar {
     display: none; /* Masquer la scrollbar pour un aspect plus propre */
@@ -181,7 +185,7 @@ nav div a img{
 }
 
 .dark-card {
-    background-color: #0f1124;
+    background-color: #27273f;
     color: #ffffff;
 }
 
@@ -224,6 +228,8 @@ nav div a img{
 .scroll-button:hover {
     background: rgba(255, 255, 255, 0.3);
 }
+
+
 /* Section Compétences */
 #skills {
     padding: 3rem 0;
@@ -237,6 +243,7 @@ nav div a img{
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .skill-card {
@@ -246,6 +253,32 @@ nav div a img{
     max-width: 420px;
     text-align: center;
 }
+.skill-card img{
+    object-fit: contain;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.animate-spin {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+}
+.animate-bounce {
+    animation: bounce 1.5s infinite;
+}
+
 
 /* Section Contact */
 #contact {
