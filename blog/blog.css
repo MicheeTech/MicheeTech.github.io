@@ -11,6 +11,8 @@ body {
     margin: auto;
     padding: 2rem;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
